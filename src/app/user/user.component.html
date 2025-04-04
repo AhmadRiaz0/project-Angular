@@ -1,0 +1,6 @@
+<div>
+    <button (click)="onSelectUser()">
+        <img [src]="imagePath" [alt]="name"/> <!-- 8. Utiliser les données recu depuis le composant parent (AppComponent) (L’image et le nom de l’utilisateur sont affichés grâce aux propriétés @Input() reçues.)-->
+        <span>{{ name }}</span> <!-- 8. Utiliser les données recus depuis le composant parent (AppComponent) (L’image et le nom de l’utilisateur sont affichés grâce aux propriétés @Input() reçues.) -->
+    </button>
+</div>
