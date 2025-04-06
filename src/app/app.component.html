@@ -3,8 +3,9 @@
 <main>
     <ul id="users">
         <li>
-        <!-- (select)="onSelectUser($event)"  //3. Le parent écoute l'événement select dans le template -->
-            <app-user 
+        <!-- (select)="onSelectUser($event)" Le parent écoute l'événement select dans le template recu depuis l'enfant-->
+        <!-- "Quand l’événement select est déclenché, exécute ce qu’il y a à droite du "=", alors exécute la méthode onSelectUser(...) du parent, et passe-lui la donnée envoyée par l’enfant (via $event). -->    
+        <app-user 
             [id]="users[0].id" 
             [avatar]="users[0].avatar" 
             [name]="users[0].name" 

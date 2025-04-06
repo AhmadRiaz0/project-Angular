@@ -14,7 +14,8 @@ import { DUMMY_USERS } from "./user/dummy-users"; //Importer les utilisateur
 export class AppComponent {
   users = DUMMY_USERS; //Rajouter une propriété pour stocker les utilisateurs
 
-  onSelectUser(id: string) { //4. Permet au parent de récupérer les données envoyées par l'enfant, et decide de l'action a adopter
+  //Méthode permettant de recevoir les éléments depuis l'enfant
+  onSelectUser(id: string) { //Permet au parent de récupérer les données envoyées par l'enfant, et decide de l'action a adopter
     console.log('Selected user with id ' + id);
   }
 }
