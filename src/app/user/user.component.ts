@@ -4,6 +4,19 @@ import { input } from '@angular/core'; //Fonction input, permet de transformer l
 import { Output } from '@angular/core'; //Décorateur @Output(), permet de d'envoyer des événements d'un composant enfant vers un composant parent. 
 import { EventEmitter } from '@angular/core'; //Objet EventEmitter, permet de transmettre des données lorsqu'un événement se produit dans le composant enfant. 
 
+//Type 
+//type User = {
+//  id: string;
+//  avatar: string;
+//  name: string;
+//}; 
+
+//Interface 
+interface User {
+  id: string;
+  avatar: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-user',
@@ -15,19 +28,20 @@ import { EventEmitter } from '@angular/core'; //Objet EventEmitter, permet de tr
 //Toutes les propriete défini dans cette classe sont accessible dans le fichier component.html 
 export class UserComponent {
   //Angular 
- @Input({required: true}) id!: string; //Décorateur @Input() aux propriétés du composant (Ces valeurs seront envoyées par un autre composant (le composant parent)), "required" : force le parent à fournir une valeur obligatoire à l'@Input
- @Input({required: true}) avatar!: string; //Décorateur @Input() aux propriétés du composant (Ces valeurs seront envoyées par un autre composant (le composant parent)), "required" : force le parent à fournir une valeur obligatoire à l'@Input
- @Input({required: true}) name!: string; //Décorateur @Input() aux propriétés du composant (Ces valeurs seront envoyées par un autre composant (le composant parent)), "required" : force le parent à fournir une valeur obligatoire à l'@Input
- @Output() select = new EventEmitter(); //Objet EventEmitter, envoyer des événements d'un composant enfant vers un composant parent. 
 
+  //Creation d'un type de donnees complexe pour utiliser les éléments de la classe
+  @Input({required: true}) user!: User;
+
+ @Output() select = new EventEmitter(); //Objet EventEmitter, envoyer des événements d'un composant enfant vers un composant parent. 
+ 
 
  get imagePath(){
-  return 'assets/users/users/' + this.avatar; //Cela permet de générer le chemin de l'image dynamiquement en fonction du avatar reçu.
+  return 'assets/users/users/' + this.user.avatar; //Cela permet de générer le chemin de l'image dynamiquement en fonction du avatar reçu.
  }
 
 
 //Méthode permettant d'envoyer les éléments vers le parent
 onSelectUser(){
-  this.select.emit(this.id); //Méthode venant de EventEmitter, permet de transmettre une nouvelle valeur vers le composant parent
+  this.select.emit(this.user.id); //Méthode venant de EventEmitter, permet de transmettre une nouvelle valeur vers le composant parent
 }
 }
