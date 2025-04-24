@@ -22,8 +22,7 @@ export class AppComponent {
    this.selectedUserId = id; 
   }
 
-  //5. Trouver le nom a partir de l'id  de l'utilisateur
   get selectedUser() {
-    return this.users.find((user)=> user.id === this.selectedUserId)!; //Retourne l'utilisateur ayant l'id de selectedUserId que l'ona trouver avec la methode onSelectUser  
+    return this.users.find((user)=> user.id === this.selectedUserId)!; //Retourne l'utilisateur ayant l'id de selectedUserId que l'on a trouver avec la methode onSelectUser  
   }
 }

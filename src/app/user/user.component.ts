@@ -4,19 +4,7 @@ import { input } from '@angular/core'; //Fonction input, permet de transformer l
 import { Output } from '@angular/core'; //Décorateur @Output(), permet de d'envoyer des événements d'un composant enfant vers un composant parent. 
 import { EventEmitter } from '@angular/core'; //Objet EventEmitter, permet de transmettre des données lorsqu'un événement se produit dans le composant enfant. 
 
-//Type 
-//type User = {
-//  id: string;
-//  avatar: string;
-//  name: string;
-//}; 
-
-//Interface 
-interface User {
-  id: string;
-  avatar: string;
-  name: string;
-}
+import { type User } from './user.model';
 
 @Component({
   selector: 'app-user',

@@ -6,15 +6,13 @@
         </menu>
     </header>
 
+    
     <ul>
-        <li>
-            <app-task></app-task>
-        </li>
-        <li>
-            <app-task></app-task>
-        </li>
-        <li>
-            <app-task></app-task>
-        </li>
+        @for (task of selectedUserTasks; track task.id)
+        {
+            <li>
+                <app-task [task]="task"/> <!-- [task] = propriété @Input() dans le composant enfant // "task" =  variable locale (dans la boucle @for du parent) -->
+            </li>
+        }
     </ul>
 </section>
