@@ -19,8 +19,8 @@ export class UserComponent {
 
   //Creation d'un type de donnees complexe pour utiliser les éléments de la classe
   @Input({required: true}) user!: User;
-
- @Output() select = new EventEmitter(); //Objet EventEmitter, envoyer des événements d'un composant enfant vers un composant parent. 
+  @Input({required: true}) selected!: boolean;
+  @Output() select = new EventEmitter(); //Objet EventEmitter, envoyer des événements d'un composant enfant vers un composant parent. 
  
 
  get imagePath(){

@@ -11,7 +11,7 @@
         @for (task of selectedUserTasks; track task.id)
         {
             <li>
-                <app-task [task]="task"/> <!-- [task] = propriété @Input() dans le composant enfant // "task" =  variable locale (dans la boucle @for du parent) -->
+                <app-task [task]="task" (complete)="onCompleteTask($event)"/> <!-- [task] = propriété @Input() dans le composant enfant // "task" =  variable locale (dans la boucle @for du parent) -->
             </li>
         }
     </ul>
