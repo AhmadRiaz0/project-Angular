@@ -1,6 +1,6 @@
-<div>
+<app-card>
     <button [class.active]="selected" (click)="onSelectUser()"> <!-- L'utilisateur click sur le button-->
         <img [src]="imagePath" [alt]="user.name"/> <!-- Utiliser les données recu depuis le composant parent (AppComponent) (L’image et le nom de l’utilisateur sont affichés grâce aux propriétés @Input() reçues.)-->
         <span>{{ user.name }}</span> <!-- Utiliser les données recus depuis le composant parent (AppComponent) (L’image et le nom de l’utilisateur sont affichés grâce aux propriétés @Input() reçues.) -->
     </button>
-</div>
+</app-card>

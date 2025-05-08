@@ -3,14 +3,15 @@ import { Input } from '@angular/core'; //Décorateur @Input(), qui sert à recev
 import { input } from '@angular/core'; //Fonction input, permet de transformer la propriété en fonction + on utilise le mecanisme de Signal pour la gestion des changements sur cette propriété
 import { Output } from '@angular/core'; //Décorateur @Output(), permet de d'envoyer des événements d'un composant enfant vers un composant parent. 
 import { EventEmitter } from '@angular/core'; //Objet EventEmitter, permet de transmettre des données lorsqu'un événement se produit dans le composant enfant. 
-
 import { type User } from './user.model';
+import { CardComponent } from "../shared/card/card.component";
 
 @Component({
   selector: 'app-user',
   standalone: true,
   templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
+  styleUrl: './user.component.css',
+  imports: [CardComponent]
 })
 
 //Toutes les propriete défini dans cette classe sont accessible dans le fichier component.html 
